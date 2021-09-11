@@ -13,9 +13,9 @@ type repoConfig struct {
 	Command string `yaml:"cmd"`
 }
 
-func ReadConfig() []repoConfig {
+func ReadConfig(configFile string) []repoConfig {
 	c := &[]repoConfig{}
-	yamlFile, err := ioutil.ReadFile("conf.yaml")
+	yamlFile, err := ioutil.ReadFile(configFile)
 	if err != nil {
 		log.Printf("yamlFile.Get err   #%v ", err)
 	}
